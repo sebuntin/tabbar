@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <tab-bar>
-      <tab-bar-item>
+      <tab-bar-item path="/home" :activeColor="activeColor">
         <img
           slot="item-icon"
           src="./assets/img/tabbar/home-outline.svg"
@@ -14,7 +14,7 @@
         >
         <div slot="item-text">首页</div>
       </tab-bar-item>
-      <tab-bar-item>
+      <tab-bar-item path="/cart" :activeColor="activeColor">
         <img
           slot="item-icon"
           src="./assets/img/tabbar/cart-outline.svg"
@@ -27,7 +27,7 @@
         >
         <div slot="item-text">购物车</div>
       </tab-bar-item>
-      <tab-bar-item>
+      <tab-bar-item path="/category" :activeColor="activeColor">
         <img
           slot="item-icon"
           src="./assets/img/tabbar/grid-outline.svg"
@@ -40,7 +40,7 @@
         >
         <div slot="item-text">更多</div>
       </tab-bar-item>
-      <tab-bar-item>
+      <tab-bar-item path="/profile" :activeColor="activeColor">
         <img
           slot="item-icon"
           src="./assets/img/tabbar/person-outline.svg"
@@ -54,6 +54,9 @@
         <div slot="item-text">我的</div>
       </tab-bar-item>
     </tab-bar>
+    <keep-alive>
+      <router-view />
+    </keep-alive>
   </div>
 </template>
 
@@ -65,6 +68,11 @@ export default {
   components: {
     TabBar,
     TabBarItem
+  },
+  data() {
+    return {
+      activeColor: 'black'
+    }
   }
 }
 </script>
