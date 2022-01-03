@@ -19,7 +19,7 @@ export default {
   name: 'TabBarItem',
   data() {
     return {
-      isActive: true 
+      isActive: false 
     }
   },
 }
